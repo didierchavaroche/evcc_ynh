@@ -4,7 +4,7 @@ It shall NOT be edited by hand.
 -->
 
 <h1>
-  <img src="https://raw.githubusercontent.com/YunoHost/apps/main/logos/evcc.png" width="32px" alt="Logo of EVCC">
+  <img src="https://evcc.io/favicon.ico" width="32px" alt="Logo of EVCC">
   EVCC, packaged for YunoHost
 </h1>
 
@@ -26,10 +26,10 @@ Pull request are welcome and should target the [`testing` branch](https://github
 The `testing` branch can be tested using:
 ```
 # fresh install:
-sudo yunohost app install https://github.com/YunoHost-Apps/evcc_ynh/tree/testing
+sudo yunohost app install https://github.com/didierchavaroche/evcc_ynh
 
 # upgrade an existing install:
-sudo yunohost app upgrade redirect -u https://github.com/YunoHost-Apps/evcc_ynh/tree/testing
+sudo yunohost app upgrade redirect -u https://github.com/didierchavaroche/evcc_ynh.git
 ```
 
 ### 📚 App packaging documentation
