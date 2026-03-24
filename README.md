@@ -4,7 +4,7 @@ It shall NOT be edited by hand.
 -->
 
 <h1>
-  <img src="https://evcc.io/favicon.ico" width="32px" alt="Logo of EVCC">
+  <img src="https://avatars.githubusercontent.com/u/81383504?s=48&v=4" width="32px" alt="Logo of EVCC">
   EVCC, packaged for YunoHost
 </h1>
 
