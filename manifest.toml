@@ -1,0 +1,73 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+
+packaging_format = 2
+
+id = "evcc"
+name = "EVCC"
+description.en = "Create a redirection or a proxy to another path"
+description.fr = "Créer une redirection ou un proxy vers un autre emplacement"
+
+version = "0.303.1~ynh2.1"
+
+maintainers = ['Didier Chavaroche']
+
+[upstream]
+license = "AGPL-3.0-or-later"
+website = "https://evcc.io/"
+
+[integration]
+yunohost = ">= 11.2.30"
+helpers_version = "2.1"
+architectures = "all"
+multi_instance = true
+ldap = "not_relevant"
+sso = "not_relevant"
+disk = "50M"
+ram.build = "50M"
+ram.runtime = "50M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.path]
+    type = "path"
+    default = "/evcc"
+    help = "Be careful when using this app in reverse-proxy mode: the target may require to be installed at the root of a domain (or subdomain), meaning the path is just '/'!"
+
+    [install.redirect_type]
+    ask.en = "Redirect type"
+    ask.fr = "Type de redirection"
+    type = "select"
+    choices.redirect = "Explicit redirection (HTTP 302). Redirect people to a different page."
+    choices.reverseproxy = "Reverse-proxy (nginx proxy_pass). Expose an app, typically something that you manually installed (with or without Docker) locally or an another machine."
+    default = "redirect"
+
+    [install.target]
+    ask.en = "Target"
+    ask.fr = "Cible"
+    type = "url"
+    help = "This may be something like https://some.other.website (for explicit redirect) or http://127.0.0.1:1234 for reverse-proxies."
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+[resources]
+    [resources.sources.main]
+    amd64.url = "https://github.com/evcc-io/evcc/releases/download/0.303.1/evcc_0.303.1_amd64.deb"
+    amd64.sha256 = "39df53e54ac9749bc19cef3079c3904411766540f97feec98e66570e7b9ccc7a"
+    arm64.url = "https://github.com/evcc-io/evcc/releases/download/0.303.1/evcc_0.303.1_arm64.deb"
+    arm64.sha256 = "c5a787878d2bf5bcc88ec7fd62962efa282a313dcd8dea5d2d2d5d735e537c6a"
+    armhf.url = "https://github.com/evcc-io/evcc/releases/download/0.303.1/evcc_0.303.1_armhf.deb"
+    armhf.sha256 = "e37ebdafcc9b755d1f8ca50dbdaa486d1cb2d070540b36337f7bf630a2ee069c"
+    
+    [resources.system_user]
+
+    [resources.permissions]
+    main.url = "/"
+    main.auth_header = false
+
+    [resources.ports]
+    remote_http.default = 7070
+    remote_http.exposed = "TCP"
