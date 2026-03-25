@@ -6,6 +6,11 @@ source /usr/share/yunohost/helpers
 _validate_redirect_uri
 
 #=================================================
+# INSTALL EVCC
+#=================================================
+ynh_setup_source --source_id="main"
+
+#=================================================
 # CONFIGURE NGINX
 #=================================================
 ynh_script_progression "Configuring NGINX web server..."
