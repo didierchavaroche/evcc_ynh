@@ -3,19 +3,22 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
-_validate_redirect_uri
-
 #=================================================
 # INSTALL EVCC
 #=================================================
 ynh_setup_source --dest_dir="/opt/" --source_id="main"
 
 #=================================================
+# CONFIGURE SERVICE
+#=================================================
+
+ynh_systemctl --action="start" --log_path="/var/www"
+
+#=================================================
 # CONFIGURE NGINX
 #=================================================
 ynh_script_progression "Configuring NGINX web server..."
 
-mv ../conf/{"nginx-$redirect_type.conf",nginx.conf}
 ynh_config_add_nginx
 
 #=================================================
