@@ -35,13 +35,11 @@ ram.runtime = "50M"
     default = "visitors"
 
 [resources]
-    [resources.sources.main]
-    amd64.url = "https://github.com/evcc-io/evcc/releases/download/0.303.1/evcc_0.303.1_amd64.deb"
-    amd64.sha256 = "39df53e54ac9749bc19cef3079c3904411766540f97feec98e66570e7b9ccc7a"
-    arm64.url = "https://github.com/evcc-io/evcc/releases/download/0.303.1/evcc_0.303.1_arm64.deb"
-    arm64.sha256 = "c5a787878d2bf5bcc88ec7fd62962efa282a313dcd8dea5d2d2d5d735e537c6a"
-    armhf.url = "https://github.com/evcc-io/evcc/releases/download/0.303.1/evcc_0.303.1_armhf.deb"
-    armhf.sha256 = "e37ebdafcc9b755d1f8ca50dbdaa486d1cb2d070540b36337f7bf630a2ee069c"
+    [resources.apt]
+    packages = ["evcc"]
+
+    extras.evcc.repo = "deb https://dl.evcc.io/public/evcc/stable/deb/debian/ stable main"
+    extras.evcc.key = "https://dl.evcc.io/public/evcc/stable/gpg.EAD5D0E07B0EC0FD.key"
     
     [resources.system_user]
 
