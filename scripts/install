@@ -9,10 +9,10 @@ source /usr/share/yunohost/helpers
 ynh_setup_source --dest_dir="/opt/" --source_id="main"
 
 #=================================================
-# CONFIGURE SERVICE
+# START SERVICE
 #=================================================
 
-ynh_systemctl --action="start" --log_path="/var/log/evcc.log"
+ynh_systemctl --action="start" --wait_until="server is serve on http://127.0.0.1" --log_path=systemd
 
 #=================================================
 # CONFIGURE NGINX
