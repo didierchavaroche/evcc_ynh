@@ -36,10 +36,9 @@ ram.runtime = "50M"
 
 [resources]
     [resources.apt]
-    packages = ["evcc"]
-
     extras.evcc.repo = "deb https://dl.evcc.io/public/evcc/stable/deb/debian/ stable main"
     extras.evcc.key = "https://dl.evcc.io/public/evcc/stable/gpg.EAD5D0E07B0EC0FD.key"
+    extras.evcc.packages = ["evcc"]
     
     [resources.system_user]
 
