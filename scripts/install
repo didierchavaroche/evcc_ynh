@@ -12,7 +12,7 @@ ynh_setup_source --dest_dir="/opt/" --source_id="main"
 # CONFIGURE SERVICE
 #=================================================
 
-ynh_systemctl --action="start" --log_path="/var/www"
+ynh_systemctl --action="start" --log_path="/var/log/evcc.log"
 
 #=================================================
 # CONFIGURE NGINX
