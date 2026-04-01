@@ -7,7 +7,7 @@ source /usr/share/yunohost/helpers
 # START SERVICE
 #=================================================
 
-ynh_systemctl --action="start" --wait_until="server is serve on http://127.0.0.1" --log_path=systemd
+ynh_systemctl --action="start" --wait_until="UI local url:      http://127.0.0.1:7070" --log_path=systemd
 
 #=================================================
 # CONFIGURE NGINX

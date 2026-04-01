@@ -36,9 +36,10 @@ ram.runtime = "50M"
 
 [resources]
     [resources.apt]
-    extras.evcc.repo = "deb https://dl.evcc.io/public/evcc/stable/deb/debian/ stable main"
-    extras.evcc.key = "https://dl.evcc.io/public/evcc/stable/gpg.EAD5D0E07B0EC0FD.key"
-    extras.evcc.packages = ["evcc"]
+    packages_from_raw_bash = """
+        curl -1sLf 'https://dl.evcc.io/public/evcc/stable/setup.deb.sh' | sudo -E bash > /dev/null 2>&1
+        echo evcc
+    """
     
     [resources.system_user]
 
