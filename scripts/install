@@ -6,8 +6,9 @@ source /usr/share/yunohost/helpers
 #=================================================
 # START SERVICE
 #=================================================
+ynh_script_progression "Adding EVCC configuration..."
 
-ynh_systemctl --action="start" --wait_until="UI local url:      http://127.0.0.1:7070" --log_path=systemd
+ynh_config_add --template="evcc.yaml" --destination="/etc/evcc.yaml"
 
 #=================================================
 # CONFIGURE NGINX
@@ -15,6 +16,12 @@ ynh_systemctl --action="start" --wait_until="UI local url:      http://127.0.0.1
 ynh_script_progression "Configuring NGINX web server..."
 
 ynh_config_add_nginx
+
+#=================================================
+# START SERVICE
+#=================================================
+
+ynh_systemctl --action="start" --timeout=600 --log_path=systemd
 
 #=================================================
 # END OF SCRIPT
