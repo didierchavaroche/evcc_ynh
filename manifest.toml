@@ -22,7 +22,7 @@ architectures = "all"
 multi_instance = true
 ldap = "not_relevant"
 sso = "not_relevant"
-disk = "50M"
+disk = "100M"
 ram.build = "50M"
 ram.runtime = "50M"
 
@@ -38,6 +38,7 @@ ram.runtime = "50M"
     [resources.apt]
     packages_from_raw_bash = """
         curl -1sLf 'https://dl.evcc.io/public/evcc/stable/setup.deb.sh' | sudo -E bash > /dev/null 2>&1
+        apt update > /dev/null 2>&1
         echo evcc
     """
     
