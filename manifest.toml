@@ -4,8 +4,8 @@ packaging_format = 2
 
 id = "evcc"
 name = "EVCC"
-description.en = "Create a redirection or a proxy to another path"
-description.fr = "Créer une redirection ou un proxy vers un autre emplacement"
+description.en = "EVCC optimizes charging your electric vehicle using locally generated solar energy or low-cost electricity rates."
+description.fr = "EVCC optimise le chargement de votre véhicule électrique en utilisant l'énergie solaire produite localement ou des tarifs d'électricité à faible coût."
 
 version = "0.303.1~ynh2.1"
 
@@ -29,6 +29,10 @@ ram.runtime = "50M"
 [install]
     [install.domain]
     type = "domain"
+
+    [install.path]
+    type = "path"
+    default = "/evcc"
 
     [install.init_main_permission]
     type = "group"
