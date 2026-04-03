@@ -5,7 +5,7 @@ network:
   host: localhost
   # port is the listening port for UI and api
   # evcc will listen on all available interfaces
-  port: __PORT__
+  port: 7070
   # externalurl is the user-configurable public url from outside
   externalurl: https://__DOMAIN____PATH__
 

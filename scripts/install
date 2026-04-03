@@ -21,7 +21,7 @@ ynh_config_add_nginx
 # START SERVICE
 #=================================================
 
-ynh_systemctl --action="start" --timeout=600 --log_path=systemd
+ynh_systemctl --action="restart" --timeout=600 --log_path=systemd
 
 #=================================================
 # END OF SCRIPT

@@ -53,6 +53,8 @@ ram.runtime = "50M"
     main.auth_header = false
 
     [resources.ports]
+    remote_http.default = 7070
+    remote_http.exposed = "TCP"
     remote_ws.default = 8887
     remote_ws.exposed = "TCP"
     remote_wss.default = 8888
